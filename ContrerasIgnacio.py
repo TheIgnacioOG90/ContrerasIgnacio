@@ -17,3 +17,12 @@ def generar_y_clasificar_saldos():
             rangos["Saldo Alto"].append(saldo)
     return saldos, rangos
 
+# Funcion para generar estadisticas y reporte de saldos
+
+def estadisticas_y_reporte(saldos):
+    print(f"Saldo Mas Alto: {max(saldos)}")
+    print(f"Saldo Mas Bajo: {min(saldos)}")
+    print(f"Saldo Promedio: {statistics.mean(saldos)}")
+    print(f"Media Geométrica: {statistics.geometric_mean(saldos)}")
+    
+

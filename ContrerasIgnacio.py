@@ -29,6 +29,16 @@ def Mostrar_Estadisticas(saldos):
     media_geometrica = Media_Geometrica(saldos)
     print(f"Saldo Mas Alto: {saldo_max}\nSaldo Mas Bajo: {saldo_min}\nSaldo Promedio: {saldo_promedio}\nMedia Geometrica: {media_geometrica}")
     
-    
+def Generar_Reporte_csv(saldos):
+    with open("Reporte.csv", "w" ,newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Clientes", "Saldos Brutos", "Deducciones", "Saldos Netos"])
+        for i, saldo in enumerate(saldos, start=1):
+            deduccion = saldo * 0.1  # Deduccion del 10%
+            saldo_neto = saldo - deduccion
+            writer.writerow([f"Cliente {i}" , saldo , deduccion, saldo_neto])
 
+def main():
+         
+        
 
